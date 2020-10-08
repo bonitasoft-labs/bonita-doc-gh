@@ -5,11 +5,7 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+ workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -25,7 +21,7 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1.1
         with:
           # Name or ID of workflow to run
-          workflow: logger_action.yml
+          workflow: logger_action
           # GitHub token with repo write access, can NOT use secrets.GITHUB_TOKEN, see readme
           token: ${{secrets.GH_LABS_TOKEN}}
           # Inputs to pass to the workflow, must be a JSON string

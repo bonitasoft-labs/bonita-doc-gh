@@ -21,7 +21,7 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1.1
         with:
           # Name or ID of workflow to run
-          workflow: logger_action
+          workflow: Logger action
           # GitHub token with repo write access, can NOT use secrets.GITHUB_TOKEN, see readme
           token: ${{secrets.GH_LABS_TOKEN}}
           # Inputs to pass to the workflow, must be a JSON string
